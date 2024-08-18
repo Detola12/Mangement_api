@@ -3,5 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    dd(\App\Models\Product::find(1));
 });
+
+Route::get('/d', [\App\Http\Controllers\ProductController::class, 'getAllProducts']);
